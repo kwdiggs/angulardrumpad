@@ -8,6 +8,10 @@ Ensure that npm and angular-cli are installed on you machine. You can install an
 
 Next, navigate to project root and run 'npm install'. Finally, run 'ng serve' and (assuming defaults) navigate to localhost:4200. 
 
+## Screen Caputure
+
+<img src="screencap.png">
+
 ## Notice
 
 The audio samples used in this project were distributed by <a href="https://trisamples.com/808-trapstep-pack-vol-1/">TriSamples</a>
