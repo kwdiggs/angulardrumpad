@@ -8,7 +8,7 @@ Ensure that npm and angular-cli are installed on you machine. You can install an
 
 Next, navigate to project root and run 'npm install'. Finally, run 'ng serve' and (assuming defaults) navigate to localhost:4200. 
 
-## Screen Caputure
+## Screen Capture
 
 <img src="screencap.png">
 
