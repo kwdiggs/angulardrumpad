@@ -1,0 +1,11 @@
+.container-fluid {
+  width: 50%;
+  text-align: center;
+}
+.row-fluid {
+  padding: 30px 0 30px 0;
+}
+.jumbotron {
+  margin-top: 70px;
+  padding-top: 20px;
+}

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {enableProdMode} from '@angular/core';
+
+enableProdMode();
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Angular Drum Pad';
 }
