@@ -1,19 +1,16 @@
 <div class="jumbotron">
   <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-xs-4"><button id="U" class="btn btn-primary">U</button></div>
-      <div class="col-xs-4"><button id="I" class="btn btn-primary">I</button></div>
-      <div class="col-xs-4"><button id="O" class="btn btn-primary">O</button></div>
-    </div>
-    <div class="row-fluid">
-      <div class="col-xs-4"><button id="J" class="btn btn-primary">J</button></div>
-      <div class="col-xs-4"><button id="K" class="btn btn-primary">K</button></div>
-      <div class="col-xs-4"><button id="L" class="btn btn-primary">L</button></div>
-    </div>
-    <div class="row-fluid">
-      <div class="col-xs-4"><button id="N" class="btn btn-primary">N</button></div>
-      <div class="col-xs-4"><button id="M" class="btn btn-primary">M</button></div>
-      <div class="col-xs-4"><button id="<" class="btn btn-primary">&#60;</button></div>
+    <div *ngFor="let row of drumButtonRows" class="row-fluid">
+      <div *ngFor="let button of row" class="col-xs-4">
+        <button *ngIf="button.label"
+                class="btn"
+                [class.btn-primary]="!button.pressed"
+                [class.btn-success]="button.pressed"
+                (mousedown)="pressButton(button.keycode)"
+                (mouseup)="releaseButton(button.keycode)">
+          {{button.label}}
+        </button>
+      </div>
     </div>
   </div>
 </div>

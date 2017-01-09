@@ -14,11 +14,31 @@ export class SoundPlaybackService {
   188 = '<'
   */
 
-  constructor() { }
+  sounds: {[keycode: number]: string} = {
+    85: '../../assets/audio-samples/pack/KickDrop.wav',
+    73: '../../assets/audio-samples/pack/HiHat.wav',
+    79: '../../assets/audio-samples/pack/What.wav',
+    74: '../../assets/audio-samples/pack/Kick.wav',
+    75: '../../assets/audio-samples/pack/Clap.wav',
+    76: '../../assets/audio-samples/pack/Snare.wav',
+    78: '../../assets/audio-samples/pack/Timpani.wav',
+    77: '../../assets/audio-samples/pack/Bell.wav',
+    188: '../../assets/audio-samples/pack/OrchestraHit.wav'
+  };
+
+  constructor() {
+  }
+
+  playSound(keycode: number) {
+    if (this.sounds[keycode]) {
+      new Audio(this.sounds[keycode]).play();
+    }
+  }
 
   // listen to your heart, when he's calling for you...
   // listen for keypresses, active pads are green
   start() {
+
 
    // prevent default keypress repetition behavior
    // i.e. 1 press = 1 function call regardless of downpress duration
@@ -32,8 +52,9 @@ export class SoundPlaybackService {
    let downM = false;
    let downLT = false;
 
+   const _this = this;
    onkeydown = function(e) {
-    if ([85,73,79,74,75,76,78,77,188].indexOf(e.keyCode) !== -1) {
+    if (_this.sounds[e.keyCode]) {
       switch (e.keyCode) {
         case 85:
           if (!downU) {
